@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {CardList} from './components/card-list/card-list.component'
+import { CardList } from "./components/card-list/card-list.component";
 import "./App.css";
 
 class App extends Component {
@@ -10,15 +10,15 @@ class App extends Component {
     };
   }
 
-  componentDidMount(){
-    fetch('https://jsonplaceholder.typicode.com/users')
-    .then(response => response.json())
-    .then(user => this.setState({monsters: user}))
+  componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(response => response.json())
+      .then(user => this.setState({ monsters: user }));
   }
   render() {
     return (
       <div className="App">
-      <CardList monsters={this.state.monsters} />
+        <CardList monsters={this.state.monsters} />
       </div>
     );
   }
